@@ -22,7 +22,7 @@ Hearts$value[Hearts$suit == "hearts"] <- 1
 Hearts$value[Hearts$suit == "spades" & Hearts$face == 'queen'] <- 13
 
 # create deck2
-deck2<-deck
+deck2 <- deck
 deck2$order <- 1:52
 
 # shuffle3() creates a new shuffled deck
@@ -33,17 +33,17 @@ shuffle3<- function(curr_deck){
 }
 
 # shuffle4() creates a new shuffled deck and assigns it to the global "deck"
-shuffle4<- function(curr_deck){
-  mixer<- sample(1:52, size=52)
-  curr_deck<- curr_deck[mixer, ]
+shuffle4 <- function(curr_deck){
+  mixer <- sample(1:52, size=52)
+  curr_deck <- curr_deck[mixer, ]
   assign("deck", curr_deck[-1, ], envir=globalenv())
 }
 
 # deal two players from hearts deck.
-deal_hearts<- function() {
-  playhearts<- shuffle4(Hearts)
-  h_player1<- head(playhearts, 13)
-  h_player2<- tail(playhearts, 13)
+deal_hearts <- function() {
+  playhearts <- shuffle4(Hearts)
+  h_player1 <- head(playhearts, 13)
+  h_player2 <- tail(playhearts, 13)
   print("----Hearts player1----")
   print(h_player1)
   print("----Hearts player2----")
