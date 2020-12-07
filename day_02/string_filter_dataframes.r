@@ -12,3 +12,18 @@ real_df[real_df$location == 'pleasanton', ]
 
 # filter by not string
 real_df[real_df$location != 'pleasanton', ]
+
+# filter by exact date
+real_df[real_df$ds == '12/14/2019', ]
+
+# filter by exact not date
+real_df[real_df$ds != '12/14/2019', ]
+
+# filter by date range
+real_df[real_df$ds > '12/14/2019', ]
+
+real_df[real_df$ds >= '12/14/2019', ]
+
+real_df[real_df$ds < '12/14/2019', ]
+
+real_df[real_df$ds <= '12/14/2019', ]
