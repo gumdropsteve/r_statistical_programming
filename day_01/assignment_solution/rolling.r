@@ -6,7 +6,7 @@ die_20 <- 1:20
 roll_7 <- function (die){
   total <- 0
   for(i in 1:7) {
-    dice<-sample(die, 1, replace=TRUE)
+    dice <- sample(die, 1, replace=TRUE)
     total = total + sum(dice)
   }
   print(total)
@@ -17,9 +17,9 @@ roll_7_count <- function (die, value){
   total <- 0
   count <- 0
   for(i in 1:7) {
-    dice<-sample(die, 1, replace=TRUE)
+    dice <- sample(die, 1, replace=TRUE)
     total = total + sum(dice)
-    if (dice > value) count=count+1
+    if (dice > value) count = count + 1
   }
   print(total)
   print(count)
