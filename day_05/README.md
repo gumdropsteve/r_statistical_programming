@@ -1,0 +1,3 @@
+- Bowling Wikipedia: [wikipedia.org/wiki/Bowling](https://wikipedia.org/wiki/Bowling)
+- Weekend project detailed description: [docs.google.com/document/d/1GKOi3xrjNLCu1iaq99NmuNq5pY3erVgG1D4ywYO20BE](https://docs.google.com/document/d/1GKOi3xrjNLCu1iaq99NmuNq5pY3erVgG1D4ywYO20BE/edit?usp=sharing)
+- R Command cheatsheet: [sites.calvin.edu/scofield/courses/m143/materials/RcmdsFromClass.pdf](https://sites.calvin.edu/scofield/courses/m143/materials/RcmdsFromClass.pdf)
