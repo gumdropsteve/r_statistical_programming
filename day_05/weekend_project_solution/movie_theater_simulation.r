@@ -44,13 +44,17 @@ for (day in 1:length(week_days)) {
     # calculate this screen's revenue for adults, and for children
     revenue_adults <- visitors_adults * ticket_cost
     revenue_children <- visitors_children * ticket_cost_child
-    # calculate snacks revenue for this screen
-    total_visitors <- visitors_adults + visitors_children
-    revenue_snacks <- sample(snack_prices, 
-                             total_visitors, 
-                             replace=TRUE,
-                             prob=snack_odds)
     
+    # find snack choices (represented by their index value) for everyone watching
+    total_visitors <- visitors_adults + visitors_children
+    snack_choice_indexes <- sample(1:length(snacks),
+                                   total_visitors, 
+                                   replace=TRUE,
+                                   prob=snack_odds)
+    # use the snack choice indexes to find which snack & the sum of their prices
+    snack_choices <- snacks[snack_choice_indexes]  
+    revenue_snacks <- sum(snack_prices[snack_choice_indexes])
+
     # calculate this screen's total revenue, and add to running total for the day
     this_screens_ticket_revenue <- revenue_adults + revenue_children
     this_screens_revenue_for_today <- this_screens_ticket_revenue + revenue_snacks
