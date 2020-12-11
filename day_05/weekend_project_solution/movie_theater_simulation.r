@@ -1,6 +1,16 @@
+# Potential Questions to Answer:
+# 1. Create snacks that the customers can buy and randomize who buys which snack
+# 2. Pretend you own multiple theaters and run two simulations to represent each theater and plot the results
+# 3. Create conditional statements for movies that may be PG-13 and children are not allowed to watch
+
 # set ticket prices for adults and children
 ticket_cost <- 12
-ticket_cost_child <- 8 
+ticket_cost_child <- 8
+
+# set up snacks, snack prices, and odds any customer purchases each
+snacks <- c(NA, 'popcorn','small_candy', 'big_candy')
+snack_prices <- c(0, 9.75, 4.25, 7)
+snack_odds <- c(0.5, 0.34, 0.05, 0.11)
 
 # list 5 of your favorite movies or shows
 movies <- c('Public Enemies', 
@@ -34,9 +44,16 @@ for (day in 1:length(week_days)) {
     # calculate this screen's revenue for adults, and for children
     revenue_adults <- visitors_adults * ticket_cost
     revenue_children <- visitors_children * ticket_cost_child
+    # calculate snacks revenue for this screen
+    total_visitors <- visitors_adults + visitors_children
+    revenue_snacks <- sample(snack_prices, 
+                             total_visitors, 
+                             replace=TRUE,
+                             prob=snack_odds)
     
     # calculate this screen's total revenue, and add to running total for the day
-    this_screens_revenue_for_today <- revenue_adults + revenue_children
+    this_screens_ticket_revenue <- revenue_adults + revenue_children
+    this_screens_revenue_for_today <- this_screens_ticket_revenue + revenue_snacks
     this_days_revenue <- this_days_revenue + this_screens_revenue_for_today
   }
   # write today's total revenue at it's index in the record book
@@ -51,7 +68,7 @@ barplot(week_days,  # <- what's being plotted
         names.arg = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"),  # add day labels
         col = "lightblue",  # adjust color
         density = 20,  # adjust how filled in each bar is
-        )
+)
 
 # make any other chart
 plot(week_days)  # simple scatter plot
