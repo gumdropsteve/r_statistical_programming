@@ -1,7 +1,6 @@
 # Potential Questions to Answer:
 # 1. Create snacks that the customers can buy and randomize who buys which snack
 # 2. Pretend you own multiple theaters and run two simulations to represent each theater and plot the results
-# 3. Create conditional statements for movies that may be PG-13 and children are not allowed to watch
 
 # set ticket prices for adults and children
 default_ticket_cost <- 12
