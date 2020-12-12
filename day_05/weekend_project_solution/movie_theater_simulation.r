@@ -4,8 +4,8 @@
 # 3. Create conditional statements for movies that may be PG-13 and children are not allowed to watch
 
 # set ticket prices for adults and children
-ticket_cost <- 12
-ticket_cost_child <- 8
+default_ticket_cost <- 12
+default_ticket_cost_child <- 8
 
 # set up snacks, snack prices, and odds any customer purchases each
 snacks <- c(NA, 'popcorn','small_candy', 'big_candy')
@@ -20,16 +20,20 @@ movies <- c('Public Enemies',
             'Scarface')
 
 # how many screens does the theater have? (assume 1 per movie)
-screens <- length(movies)
+default_screens <- length(movies)
 
 # how many seats does each screen have?
-seats <- 50 
+default_seats <- 50 
 
 # make a record book to store total revenue for each day
 week_days <- rep(0, 7)
 
   
-theater_sim <- function(){
+theater_sim <- function(screens=default_screens,  # how many screens?
+                        seats=default_seats,  # how many seats per screen?
+                        ticket_cost=default_ticket_cost,  # adult ticket price
+                        ticket_cost_child=default_ticket_cost_child  # child ticket price
+                        ){
   # iterate through each day of the week
   for (day in 1:length(week_days)) {
     
@@ -68,11 +72,17 @@ theater_sim <- function(){
   week_days
 }
 
+
+# simulate 2 movie theaters for 1 week
 theater_01 <- theater_sim()
+theater_02 <- theater_sim(seats=75, 
+                          screens=3)
+theater_03 <- theater_sim(ticket_cost=18,
+                          ticket_cost_child=5)
 
 # make a barchart showing total revenue per day
 barplot(theater_01,  # <- what's being plotted
-        main = "Total Movie Revenue Per Day",  # chart title
+        main = "Theater #1 - Total Movie Revenue Per Day",  # chart title
         xlab = "Day of Week",  # x axis label
         ylab = "Revenue (USD)",  # y axis label
         names.arg = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"),  # add day labels
@@ -80,10 +90,33 @@ barplot(theater_01,  # <- what's being plotted
         density = 20,  # adjust how filled in each bar is
 )
 
-# make any other chart
-plot(theater_01)  # simple scatter plot
+barplot(theater_02,  # <- what's being plotted
+        main = "Theater #2 - Total Movie Revenue Per Day",  # chart title
+        xlab = "Day of Week",  # x axis label
+        ylab = "Revenue (USD)",  # y axis label
+        names.arg = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"),  # add day labels
+        col = "lightblue",  # adjust color
+        density = 20,  # adjust how filled in each bar is
+)
 
-# which day had the highest revenue?
-index_of_max_value <- which.max(theater_01)  # <- asks, which index has the max value?
-days_of_the_week <- c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat")
-days_of_the_week[index_of_max_value]
+barplot(theater_03,  # <- what's being plotted
+        main = "Theater #3 - Total Movie Revenue Per Day",  # chart title
+        xlab = "Day of Week",  # x axis label
+        ylab = "Revenue (USD)",  # y axis label
+        names.arg = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"),  # add day labels
+        col = "lightblue",  # adjust color
+        density = 20,  # adjust how filled in each bar is
+)
+
+# (function) which day had the highest revenue?
+find_best_day <- function(theater){
+  index_of_max_value <- which.max(theater)  # <- asks, which index has the max value?
+  days_of_the_week <- c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat")
+  best_day <- days_of_the_week[index_of_max_value]
+  best_day
+}
+
+# share each theater's best day
+paste('Theater #1 best day was', find_best_day(theater_01), 'with', paste0('$', max(theater_01)))
+paste('Theater #2 best day was', find_best_day(theater_02), 'with', paste0('$', max(theater_02)))
+paste('Theater #3 best day was', find_best_day(theater_03), 'with', paste0('$', max(theater_03)))
