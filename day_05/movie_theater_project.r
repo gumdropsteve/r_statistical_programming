@@ -39,4 +39,4 @@ for () {
   
 # Make any other chart
 
-# Which day had the highest revenue?
+# Which day had the highest revenue? 
