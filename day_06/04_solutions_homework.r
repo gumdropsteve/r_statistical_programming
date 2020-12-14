@@ -220,6 +220,7 @@ ggplot(data = diamonds) +
 # There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use geom_col() instead. geom_bar() uses stat_count() by default: it counts the number of cases at each x position. geom_col() uses stat_identity(): it leaves the data as is.
 
 #3 Most geoms and stats come in pairs that are almost always used in concert. Read through the documentation and make a list of all the pairs. What do they have in common?
+# You can see the pairs under the "Stats" section https://ggplot2.tidyverse.org/reference/
 
 #4 What variables does stat_smooth() compute? What parameters control its behaviour?
 ?stat_smooth
