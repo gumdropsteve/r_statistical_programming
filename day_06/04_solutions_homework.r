@@ -206,8 +206,13 @@ ggplot(mpg, aes(displ, hwy)) +
 # 1. What is the default geom associated with stat_summary()? How could you rewrite the previous plot to use that geom function instead of the stat function?
 ?stat_summary
 # Default geom is pointrange
-ggplot(diamonds) +
-  geom_pointrange(aes(cut, depth, ymin = depth, ymax = depth))
+ggplot(data = diamonds) +
+  geom_pointrange(
+    mapping = aes(x = cut, y = depth),
+    stat = "summary",
+    fun.min = min,
+    fun.max = max,
+    fun = median)
 
 #2 What does geom_col() do? How is it different to geom_bar()?
 ?geom_col
