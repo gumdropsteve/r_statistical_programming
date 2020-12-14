@@ -50,6 +50,9 @@ ggplot(data = mpg) +
 # This information can be found underneath the column labels
 mpg
 
+# or this can be used
+str(mpg)
+
 #3 Map a continuous variable to color, size, and shape. How do these aesthetics behave differently for categorical vs. continuous variables?
 
 # Continuous variable
