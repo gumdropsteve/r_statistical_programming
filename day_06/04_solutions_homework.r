@@ -187,14 +187,14 @@ ggplot(mpg, aes(displ, hwy)) +
 ggplot(mpg, aes(displ, hwy)) +
   geom_point() +
   geom_smooth(aes(group = drv), se = F)
-# 2nd.
+
 ggplot(mpg, aes(displ, hwy, colour = drv)) +
   geom_smooth(se = F) +
   geom_point()
 ggplot(mpg, aes(displ, hwy)) +
   geom_point(aes(colour = drv)) +
   geom_smooth(se = F)
-# 3rd.
+
 ggplot(mpg, aes(displ, hwy)) +
   geom_point(aes(colour = drv)) +
   geom_smooth(aes(linetype = drv), se = F)
