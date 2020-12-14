@@ -162,7 +162,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 
 #3 What does show.legend = FALSE do? What happens if you remove it? Why do you think I used it earlier in the chapter?
 # It removes the legend from the chart
-# It was used earlier in the chapter because the legend did not add any benefit to the plots.
+# It was used earlier in the chapter because the legend could add confusion to the plot since some lines were the same color.
 
 #4 What does the se argument to geom_smooth() do?
 ?geom_smooth
