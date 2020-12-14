@@ -75,7 +75,7 @@ ggplot(data = mpg) +
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color=class, size=class))
 
-# The aesthetics mapping will return an error if teh data type of the value is not permitted (e.g. shape=continuous var), otherwise it will try to implement the mapping on the disired variable
+# The aesthetics mapping will return an error if teh data type of the value is not permitted (e.g. shape=continuous var), otherwise it will try to implement the mapping on the desired variable
 
 #5 What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
 # Follow Hint
