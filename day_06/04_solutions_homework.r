@@ -166,7 +166,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 
 #4 What does the se argument to geom_smooth() do?
 ?geom_smooth
-# Display confidence interval around smooth? (TRUE by default, see level to control.)
+# Display confidence interval around smooth, (TRUE by default, see level to control.)
 
 #5 Will these two graphs look different? Why/why not?
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
