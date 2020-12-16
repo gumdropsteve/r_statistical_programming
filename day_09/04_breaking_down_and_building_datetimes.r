@@ -1,6 +1,29 @@
 library(tidyverse)
 library(lubridate)
 
+today()
+now()
+
+
+# STOCK EXAMPLE
+link <- 'https://github.com/gumdropsteve/datasets/raw/master/stocks/TSLA.csv'
+df <- read_csv(link)
+df <- as_tibble(df)
+df
+
+# extract specific values from columns
+day(df$ds)
+month(df$ds)
+year(df$ds)
+
+wday(df$ds, label=TRUE, abbr=FALSE)
+
+# see last 5 and first 5 rows
+tail(year(df$ds))
+head(year(df$ds))
+
+
+### TAXI EXAMPLE
 link <- 'https://github.com/gumdropsteve/datasets/raw/master/nyc_transport/taxi/yellow_tripdata_2019-01.csv'
 df <- read.csv(link)
 df <- as_tibble(df)
