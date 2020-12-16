@@ -124,3 +124,10 @@ str_to_upper('big words')
 
 x <- c('A', 'Big', 'worD', 'HeRe')
 str_to_lower(x)
+
+# what if we only want the 1st letter to be upper?
+x <- c('a lowercase sentence', 'SENTENCE 2', 'sentence 3')
+str_to_sentence(x)
+
+# what if we only want the 1st letter of each word to be upper?
+str_to_title(x)
