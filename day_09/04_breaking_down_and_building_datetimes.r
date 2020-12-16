@@ -5,7 +5,7 @@ today()
 now()
 
 
-# STOCK EXAMPLE
+### STOCK EXAMPLE
 link <- 'https://github.com/gumdropsteve/datasets/raw/master/stocks/TSLA.csv'
 df <- read_csv(link)
 df <- as_tibble(df)
@@ -41,12 +41,10 @@ minutes <- minute(pickup_times)
 seconds <- second(pickup_times)
 
 # build
-?ymd
-
-ymd(20191204)
-
-str_c(years[1], months[1], paste0(0, days[1]), collapse=TRUE)
-
 # ymd(str_c(years[1], months[1], days[1], collapse=TRUE))  # ERROR
+?ymd
+ymd(20191204)  # works if switch 4 -> 04
+
+str_c(years[1], months[1], paste0(0, days[1]), collapse=TRUE)  # 4 -> 04 with paste0()
 
 ymd(str_c(years[1], months[1], paste0(0, days[1]), collapse=TRUE))
