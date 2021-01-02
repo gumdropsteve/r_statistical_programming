@@ -1,0 +1,135 @@
+---
+title: "R Markdown"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Headers in different sizes
+
+# H1 Header
+## H2 Header
+### H3 Header
+#### H4 Header
+##### H5 Header
+###### H6 Header
+
+## Code Blocks
+
+Displaying code `inline code cell`
+
+```
+
+Code Block
+
+```
+
+### R Code Block
+```r
+# comment
+
+val <- "World"
+paste("Hello", val)
+```
+
+### Python Code Block
+```python
+# comment
+
+val = "World"
+print(f"Hello {val}")
+```
+
+### SQL Code Block
+```SQL
+--comment
+
+SELECT * FROM table
+```
+
+## Text Formatting
+
+### Italics
+_Hello World_
+
+### Bold
+**Hello World**
+
+### Bold and Italics
+**_Hello World_**
+
+### Strikethrough 
+~~Hello World~~
+
+## Lists
+
+- item1
+- item2
+  - item3
+  - item4
+    - item5
+    - item6
+
+## Horizontal Rule
+
+---
+
+
+## Links
+
+### Inline Style Link
+[R Statistical Programming Repo](https://github.com/gumdropsteve/r_statistical_programming)
+
+### Image
+##### The difference between service models
+<p align="center">
+  <img width="800" height="500" src="https://imgur.com/XUNxkzc.png">
+</p>
+
+### GIF
+<p align="center">
+  <img width="350" height="350" src="https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy.gif">
+</p>
+
+### Video
+<p align="center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jbkSRLYSojo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Resources
+
+- **Markdown**
+  - [Markdown Tutorial](https://www.markdowntutorial.com/)
+  - [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet)
+  - [R Shiny Tutorial](https://shiny.rstudio.com/tutorial/)
+- **R Shiny**
+  - [R Shiny Cheatsheet 1](http://zevross.com/blog/2016/04/19/r-powered-web-applications-with-shiny-a-tutorial-and-cheat-sheet-with-40-example-apps/)
+  - [R Shiny Cheatsheet 2](https://rstudio.com/wp-content/uploads/2015/02/shiny-cheatsheet.pdf)
+  - [Shiny Dashboard](https://rstudio.github.io/shinydashboard/)
+  - [Building and Sharing a Shiny App](https://towardsdatascience.com/building-and-sharing-a-shiny-app-a486ca9efca2)
+- **R Markdown**
+  - [R Markdown Tutorial 1](https://rmarkdown.rstudio.com/lesson-1.html)
+  - [R Markdown Tutorial 2](https://rmarkdown.rstudio.com/authoring_quick_tour.html)
+  - [R Markdown Tutorial 3]( https://ourcodingclub.github.io/tutorials/rmarkdown/)
